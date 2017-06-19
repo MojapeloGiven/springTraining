@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "employee" class = "Beans.Employee" destroy-method = "destroy">
+      <property name = "userName" value = "Admin1"/>
+      <property name = "fullNames" value = "Climate Manenzhe"/>
+      <property name = "profession" value = "Junior Developer"/>
+   </bean>
+   
+   <bean id = "developer01" class = "Beans.Developer" destroy-method = "destroy" parent="employee">
+      
+      <property name = "codingLanguages" value = "1"/>
+      <property name = "codingExperience" value = "Junior"/>
+   </bean>
+
+  <bean id="languagesCollection" class="Beans.LanguagesCollection">
+   <property name="languagesSet">
+       <set>
+           <value>Java</value>
+           <value>C#</value>
+           <value>C++</value>
+           <value>Php</value>
+           <value>Python</value>
+       </set>
+   </property>
+  </bean>
+   
+
+</beans>
